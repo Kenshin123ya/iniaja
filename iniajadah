@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        /* Add style for page break */
+        .page-break {
+            page-break-before: always;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>klik tombol di bawah ini</h1>
+    <p>video akan muncul ketika anda ikuti panduan ini</p>
+
+    <button onclick="createNewPage()">Go to video</button>
+
+    <script>
+        function createNewPage() {
+            // Clear the current page content
+            document.body.innerHTML = '';
+
+            // Create new elements for the new page
+            let newHeading = document.createElement('h1');
+            newHeading.textContent = 'klik link dibawah ini dan subscribe';
+
+            let newParagraph = document.createElement('p');
+            newParagraph.textContent = 'otomatis video akan muncul ketika anda sudah subscribe';
+
+            // Create a link (anchor element)
+            let newLink = document.createElement('a');
+            newLink.href = 'https://www.youtube.com/c/MarshellWangs'; // Set the link URL
+            newLink.textContent = 'https://www.youtube.com/c/MarshellWangs'; // Set the link text
+            newLink.target = '_blank'; // Open the link in a new tab
+
+            // Create a page break section
+            let pageBreak = document.createElement('div');
+            pageBreak.className = 'page-break';
+
+            // Create new text for the second page
+            let newText = document.createElement('p');
+            newText.textContent = '↻      ◁     ||     ▷       ↺';
+
+            let backButton = document.createElement('button');
+            backButton.textContent = 'Back to Main Page';
+            backButton.onclick = function() {
+                window.location.reload(); // Reload the page to return to the original content
+            };
+
+            // Append new elements to the body
+            document.body.appendChild(newHeading);
+            document.body.appendChild(newParagraph);
+            document.body.appendChild(newLink); // Add the link
+            document.body.appendChild(document.createElement('br')); // Add a line break
+            document.body.appendChild(backButton);
+
+            // Append page break and text for second page
+            document.body.appendChild(pageBreak); // Insert page break
+            document.body.appendChild(newText);   // Add second page text
+        }
+    </script>
+
+</body>
+</html>
